@@ -1,0 +1,18 @@
+[{
+  "title": "Code School",
+  "synopis": "Reality show following 21 student developers on their journey through code.",
+  "genre": "Horror",
+  "movieId": "1"
+},
+{
+  "title": "The Lion King",
+  "synopis": "Embark on an extraordinary coming-of-age adventure as Simba, a lion cub who cannot wait to be king.",
+  "genre": "Children's",
+  "movieId": "2"
+},
+{
+  "title": "Sausage Party",
+  "synopis": "Life is good for all the food items that occupy the shelves at the local supermarket.",
+  "genre": "Comedy",
+  "movieId": "3"
+}]

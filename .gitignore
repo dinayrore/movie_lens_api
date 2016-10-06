@@ -1,0 +1,7 @@
+# Ignore docs files
+styles/.sass-cache
+styles/.sass-cache/*
+*.map
+
+.DS_STORE
+environment.rb
