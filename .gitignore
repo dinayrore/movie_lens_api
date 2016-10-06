@@ -4,4 +4,4 @@ styles/.sass-cache/*
 *.map
 
 .DS_STORE
-environment.rb
+config/database.yml
