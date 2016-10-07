@@ -1,3 +1,60 @@
+* {
+  background-color: #C3DCE0;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif; }
 
+button {
+  top: 190px;
+  position: relative;
+  float: left;
+  left: 420px;
+  background-color: #4E5859;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid #131616;
+  font-family: 'Julius Sans One', sans-serif; }
+
+header {
+  top: 50px;
+  position: relative;
+  font-size: 50px;
+  background-color: white;
+  width: 950px;
+  text-align: center;
+  color: #131616;
+  font-family: 'Julius Sans One', sans-serif;
+  border-bottom: 2px solid #131616;
+  border-top: 2px solid #131616; }
+
+.searchBar {
+  position: relative;
+  top: 130px;
+  left: 270px;
+  width: 200px;
+  border: 2px solid #4E5859;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px; }
+
+.mainContainer {
+  width: 950px;
+  height: 450px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 40px auto 0;
+  position: relative; }
+
+.topMovies {
+  width: 950px;
+  height: 175px;
+  border-radius: 20px;
+  margin: 15px auto 0;
+  position: relative;
+  background-color: white; }
 
 /*# sourceMappingURL=main.css.map */
