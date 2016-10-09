@@ -23,6 +23,7 @@ header {
   background-color: white;
   width: 950px;
   text-align: center;
+  font-weight: bolder;
   color: #131616;
   font-family: 'Julius Sans One', sans-serif;
   border-bottom: 2px solid #131616;
@@ -49,6 +50,15 @@ header {
   margin: 40px auto 0;
   position: relative; }
 
+.navBar {
+  background-color: #758486;
+  position: relative;
+  float: right;
+  top: 50px;
+  padding: 0px;
+  margin: 0px;
+  height: 20px; }
+
 .topMovies {
   width: 950px;
   height: 175px;
@@ -56,5 +66,31 @@ header {
   margin: 15px auto 0;
   position: relative;
   background-color: white; }
+
+ul {
+  list-style: none;
+  width: 950px;
+  background-color: #758486;
+  padding: 0px;
+  margin: 0px;
+  height: 20px; }
+  ul li {
+    background-color: #758486;
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    padding: 0px;
+    height: 20px; }
+  ul li:hover {
+    background-color: white; }
+
+a:hover {
+  color: black; }
+
+a:visited {
+  color: black; }
+
+a:active {
+  color: black; }
 
 /*# sourceMappingURL=main.css.map */

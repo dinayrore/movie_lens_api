@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Julius+Sans+One" rel="stylesheet">
     <meta charset="utf-8">
     <title>Movie Lens Online</title>
-  </head>
-  <body>
+</head>
+
+<body>
+    <!-- Content goes here -->
+
+    <div class="mainContainer">
+        <header>Movie Lens Online</header>
+        <div class="navBar">
+          <ul>
+            <li><a href="http://www.google.com">Home</a></li>
+            <li><a href="http://www.google.com">Genres</a></li>
+            <li><a href="http://www.google.com">Top Movies</a></li>
+          </ul>
+        </div>
+        <input type="text" name="search" class="searchBar" placeholder="Search Movies..."></input>
+        <button name="movieSearch">GO</button>
+    </div>
+    <div class='topMovies'></div>
 
 
-  <script src="js/jquery-3.1.1.min.js"></script>
-  <script src="js/handlebars-v4.0.5.js"></script>
-  <script src="js/main.js"></script>
-  </body>
+
+
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
