@@ -6,7 +6,7 @@ body {
   background-color: #C3DCE0; }
 
 button {
-  top: 190px;
+  top: 210px;
   position: relative;
   float: left;
   left: 420px;
@@ -33,7 +33,7 @@ header {
 
 .searchBar {
   position: relative;
-  top: 130px;
+  top: 150px;
   left: 270px;
   width: 200px;
   border: 2px solid #4E5859;
@@ -45,7 +45,7 @@ header {
 
 .mainContainer {
   width: 950px;
-  height: 450px;
+  height: 600px;
   border-radius: 20px;
   background-color: white;
   margin: 40px auto 0;
@@ -56,32 +56,36 @@ header {
   position: relative;
   float: right;
   top: 50px;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   height: 20px; }
-
-.topMovies {
-  width: 950px;
-  height: 175px;
-  border-radius: 20px;
-  margin: 15px auto 0;
-  position: relative;
-  background-color: white; }
 
 ul {
   list-style: none;
   width: 950px;
   background-color: #758486;
-  padding: 0px;
-  margin: 0px;
-  height: 20px; }
+  padding: 0;
+  margin: 0;
+  height: 25px;
+  border-bottom: 2px solid #131616; }
   ul li {
     display: inline-block;
     width: 33%;
     text-align: center;
-    padding: 0px;
-    height: 20px; }
+    padding: 0;
+    height: 25px;
+    padding-top: 5px;
+    border-bottom: 2px solid #131616; }
   ul li:hover {
     background-color: white; }
+
+.topMovies {
+  position: relative;
+  float: right;
+  width: 950px;
+  height: 150px;
+  top: 300px;
+  border-top: 2px solid #131616;
+  border-bottom: 2px solid #131616; }
 
 /*# sourceMappingURL=main.css.map */
