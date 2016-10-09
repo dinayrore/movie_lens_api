@@ -1,7 +1,10 @@
 * {
-    background-color: #C3DCE0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background-color: #C3DCE0;
 }
 
 button {
@@ -42,7 +45,6 @@ header {
     font-size: 16px;
     background-color: white;
     background-position: 10px 10px;
-    background-repeat: no-repeat;
     padding: 12px 20px;
 }
 
@@ -83,7 +85,6 @@ ul{
   height: 20px;
 
     li{
-      background-color: #758486;
       display: inline-block;
       width:33%;
       text-align: center;
@@ -93,16 +94,5 @@ ul{
 
     li:hover{
       background-color: white;
-
     }
-}
-
-a:hover{
-  color:black;
-}
-a:visited{
-  color:black;
-}
-a:active{
-  color:black;
 }
