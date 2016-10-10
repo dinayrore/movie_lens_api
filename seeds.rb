@@ -47,18 +47,18 @@ class RatingsData
   end
 
   def load_from_file
-    # counter = 0
+    counter = 0
 
     CSV.foreach(@filename, col_sep: "\t") do |line|
-      # counter += 1
+      counter += 1
 
-      # if counter < 1000
+      if counter < 5000
         user_id = line[0].to_i
         movie_id = line[1].to_i
         score = line[2].to_i
 
         Rating.create(user_id: user_id, movie_id: movie_id, score: score)
-      # end
+      end
     end
   end
 end
