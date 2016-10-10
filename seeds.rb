@@ -20,7 +20,8 @@ class UserData
       occupation = line[3]
       zip_code = line[4]
 
-      User.create(id: id, age: age, gender: gender, occupation: occupation, zip_code: zip_code)
+      User.create(id: id, age: age, gender: gender, occupation: occupation,
+                  zip_code: zip_code)
     end
   end
 end
