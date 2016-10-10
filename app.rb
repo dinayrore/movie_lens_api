@@ -124,8 +124,32 @@ get '/api/ratings' do
   elsif !score.nil?
     rating = Rating.where(score: score)
   else
-    rating = Rating.all.order(score: :DESC)
+    rating = Rating.all
+    # TODO: rating = Rating.top 10.sort_by(avg_score: score they want)
   end
 
   rating.to_json
+end
+
+get '/api/top_rated_movies' do
+  average_ratings = []
+
+  movies = Movie.all
+
+  movies.each do |movie|
+    ratings = Rating.where(movie_id: movie.id)
+
+    if ratings.length >= 5
+      average_rating = ratings.map(&:score).sum.to_f / ratings.length
+
+      average_ratings << {
+        average_rating: average_rating,
+        movie: movie
+      }
+    end
+  end
+
+  average_ratings.sort_by! { |hash| -hash[:average_rating] }
+
+  average_ratings[0..10].to_json
 end
