@@ -1,15 +1,14 @@
+require 'active_record'
 #
 class CreateUserDataTable < ActiveRecord::Migration[5.0]
   def up
-    create_table :movies do |m|
-      m.string :id
-      m.string :movie_id
-      m.string :release_date
+    create_table :users do |u|
+      u.integer :age
     end
   end
 
   def down
-    drop_table :movies
+    drop_table :users
   end
 end
 

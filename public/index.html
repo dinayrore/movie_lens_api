@@ -6,8 +6,29 @@
     <title>Movie Lens Online</title>
   </head>
   <body>
+    <ul id="movies"></ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      var $movies = $('#movies');
 
+      $.ajax({
+        method: 'GET',
+        url: '/api/movies',
+        data: {},
+        dataType: 'json'
+      }).done(function(movies) {
+        console.log(movies);
 
+        movies.forEach(function(movie) {
+          console.log(movie);
+
+          $('<li>').text(movie.title).appendTo($movies);
+        });
+      }).fail(function(xhr, text, error) {
+        console.error('failed to get movies: ' + text + ', ' + error);
+      });
+    </script>
+    
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/handlebars-v4.0.5.js"></script>
   <script src="js/main.js"></script>

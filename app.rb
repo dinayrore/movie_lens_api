@@ -1,10 +1,9 @@
 require 'sinatra'
 require 'active_record'
 require 'yaml'
-
-require_relative 'models/movie'
-require_relative 'models/rating'
-require_relative 'models/user'
+require 'movie'
+require 'rating'
+require 'user'
 
 ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 
@@ -16,14 +15,14 @@ after do
   ActiveRecord::Base.connection.close
 end
 
-# POST /api/ - create a game, read request body as JSON
+# POST /api/ - create, read request body as JSON
 post '/api/' do
   variable = Class.create(column_name: params['input'])
   status 201
   variable.to_json
 end
 
-# PUT /api/game - update & read request body as JSON
+# PUT /api/ - update & read request body as JSON
 put '/api/' do
   variable = Class.find_by(column_name: params['input'])
   variable.update(column_name: params['new_input'])
@@ -31,13 +30,13 @@ put '/api/' do
   variable.to_json
 end
 
-# DELETE /api/characters - delete & return success/failure status code
-delete '/api/game' do
+# DELETE /api/ - delete & return success/failure status code
+delete '/api/' do
   variable = Class.find_by(column_name: params['input']
   variable.destroy
 end
 
-# GET /api/hero - return individual/all as JSON
+# GET /api/ - return individual/all as JSON
 get '/api/' do
   variable = params['variable']
 

@@ -13,7 +13,7 @@ class UserData
       id = line[0].to_i
 
 
-      User.create(id: id)
+      User.create(id: user_id)
     end
   end
 end
@@ -28,7 +28,7 @@ class MovieData
       id = line[0].to_i
       title = line[1]
 
-      Movie.create(id: id, title: title)
+      Movie.create(id: movie_id, title: title)
     end
   end
 end
