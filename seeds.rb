@@ -1,5 +1,5 @@
 require 'active_record'
-require 'CSV'
+require 'csv'
 require_relative 'models/user'
 require_relative 'models/movie'
 require_relative 'models/rating'
