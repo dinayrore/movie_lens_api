@@ -4,6 +4,9 @@ class CreateUserDataTable < ActiveRecord::Migration[5.0]
   def up
     create_table :users do |u|
       u.integer :age
+      u.string :gender
+      u.string :occupation
+      u.string :zip_code
     end
   end
 
