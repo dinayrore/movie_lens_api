@@ -1,10 +1,11 @@
+require 'active_record'
 #
 class CreateRatingsDataTable < ActiveRecord::Migration[5.0]
   def up
     create_table :ratings do |r|
-      r.string :user_id, foreign_key: true
-      r.string :movie_id, foreign_key: true
-      r.string :score
+      r.belongs_to :user, index: true, foreign_key: true
+      r.belongs_to :movie, index: true, foreign_key: true
+      r.integer :score
     end
   end
 
