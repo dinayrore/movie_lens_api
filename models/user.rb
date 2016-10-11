@@ -1,5 +1,5 @@
 require 'active_record'
 #
 class User < ActiveRecord::Base
-  validates :user_id, presence: true
+  validates :age, :gender, :occupation, :zip_code, presence: true
 end

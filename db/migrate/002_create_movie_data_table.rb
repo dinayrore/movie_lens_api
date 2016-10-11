@@ -1,8 +1,8 @@
+require 'active_record'
 #
 class CreateMovieDataTable < ActiveRecord::Migration[5.0]
   def up
     create_table :movies do |m|
-      m.string :id
       m.string :title
     end
   end
