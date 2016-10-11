@@ -1,6 +1,6 @@
-# What To Watch?
+# MovieLens
 
-The program entitled 'app.rb' is a basic program intended to help users to ... The program does the following functions...The program will automatically output...
+To run our application, please visit the heroku link:
 
 ## Getting Started
 
@@ -30,12 +30,12 @@ Install ruby 2.3.1 - the latest version of Ruby
   2. After quite some time, run:```rbenv global 2.3.1```
 Once you have completed the above installation processes your system should be ready to launch the program!
 
-Download postgresql 
+Download postgresql
   1. Go to http://postgresapp.com/
   2. Move the app to the `/Applications` file.
   3. Double Click on app to run the program.
-  
-Download postico from: 
+
+Download postico from:
   1. Go to https://eggerapps.at/postico/
   2. Move the app to the `/Applications` file.
   3. Double Click on app to run the program.
@@ -50,13 +50,17 @@ Download postman from:
 Please complete the following procedure to run the program on a live system:
   1. Open Terminal.
   2. Change your directory to the one that which you have saved this zip file.`cd folder_name`
-  3. Input `bundle` or `bundle install` to run the Gemfile on your machine.
-  4. Open postgresql and create your database using the following code: `CREATE DATABASE dbname;`
-  5. Back in Terminal run `rake db:migrate` be sure to set your DATABSE_URL in irb using the code `$ export DATABASE_URL=postgres://YOURUSER@localhost:5432/SQLDATABASENAME` to create the necessary database tables.
-  6. Then, run `ruby seeds.rb` to populate the data tables with the appropriate information.
-  7. Still in Terminal, run `shotgun app.rb` to run the app utilizing sinatra, while allowing changes to be made to the code for testing purposes.
-  8. Use postman to run the app.rb CRUD statements and utilize postico to insure that all functions operate properly.
-  9. READ all instructions BEFORE adding input.
+  3. Run `gem install bundler` and then run `bundle` or `bundle install` to run the Gemfile on your machine.
+  4. Open postgresql and create your database using the following code: `CREATE DATABASE dbname;` or run `rake db:create`
+  5.  Back in Terminal input `export DATABASE_URL=postgres://YOURUSER@localhost:5432/SQLDATABASENAME` (replace YOURUSER with your username and SQLDATABASENAME with the database you created).
+  6. Run `bundle exec rake db:migrate` to create the necessary tables for the database.
+  7. Then, run `bundle exec ruby seeds.rb` to populate the data tables with the appropriate information.
+
+## Running Web app
+
+  1. Still in Terminal, run `bundle exec shotgun app.rb` to run the app utilizing sinatra, while allowing changes to be made to the code for testing purposes.
+  2. Go to your web browser, enter the localhost:9393/index.html
+  3. READ all instructions BEFORE adding input.
 
 ## Built With
 
