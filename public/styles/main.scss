@@ -11,7 +11,7 @@ button {
     top: 210px;
     position: relative;
     float: left;
-    left: 420px;
+    left: 425px;
     background-color: #4E5859;
     width: 100px;
     height: 30px;
@@ -24,7 +24,7 @@ button {
 header {
     top: 50px;
     position: relative;
-    font-size: 50px;
+    font-size: 60px;
     background-color: white;
     width: 950px;
     text-align: center;
@@ -32,14 +32,13 @@ header {
     color: #131616;
     font-family: 'Julius Sans One', sans-serif;
     border-bottom: 2px solid #131616;
-    border-top: 2px solid #131616;
 }
 
 .searchBar {
     position: relative;
     top: 150px;
-    left: 270px;
-    width: 200px;
+    left: 250px;
+    width: 250px;
     border: 2px solid #4E5859;
     border-radius: 4px;
     font-size: 16px;
