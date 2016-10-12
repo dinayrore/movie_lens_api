@@ -15,17 +15,24 @@
         <header>Movie Lens Online</header>
         <div class="navBar">
           <ul>
-            <li>Home</li>
-            <li>Genres</li>
-            <li>Top Movies</li>
+            <li id="home">Home</li>
+            <li id="genres">Genres</li>
+            <li id="topMovies">Top Movies</li>
           </ul>
         </div>
         <input type="text" name="search" class="searchBar" placeholder="Search Movies..."></input>
-        <button name="movieSearch">GO</button>
+        <button id="movieSearch" name="movieSearch">GO</button>
         <div class="topMovies"></div>
     </div>
 
+    <div class="content"></div>
 
+    <script id="movie-template" type="text/x-handlebars-template">
+      <div class="movie-container">
+        <h2>{{title}}</h2>
+        <p>{{avgRating}}</p>
+      </div>
+    </script>
 
 
 

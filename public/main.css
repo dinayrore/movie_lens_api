@@ -1,23 +1,90 @@
-/*
-Errno::ENOENT: No such file or directory - main.scss
+* {
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif; }
 
-Backtrace:
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:484:in `read'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:484:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:294:in `watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin.rb:109:in `method_missing'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Errno::ENOENT: No such file or directory - main.scss"; }
+body {
+  background-color: #C3DCE0; }
+
+button {
+  top: 210px;
+  position: relative;
+  float: left;
+  left: 425px;
+  background-color: #4E5859;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid #131616;
+  font-family: 'Julius Sans One', sans-serif; }
+
+header {
+  top: 50px;
+  position: relative;
+  font-size: 60px;
+  background-color: white;
+  width: 950px;
+  text-align: center;
+  font-weight: bolder;
+  color: #131616;
+  font-family: 'Julius Sans One', sans-serif;
+  border-bottom: 2px solid #131616; }
+
+.searchBar {
+  position: relative;
+  top: 150px;
+  left: 250px;
+  width: 250px;
+  border: 2px solid #4E5859;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  padding: 12px 20px; }
+
+.mainContainer {
+  width: 950px;
+  height: 600px;
+  border-radius: 20px;
+  background-color: white;
+  margin: 40px auto 0;
+  position: relative; }
+
+.navBar {
+  background-color: #758486;
+  position: relative;
+  float: right;
+  top: 50px;
+  padding: 0;
+  margin: 0;
+  height: 20px; }
+
+ul {
+  list-style: none;
+  width: 950px;
+  background-color: #758486;
+  padding: 0;
+  margin: 0;
+  height: 25px;
+  border-bottom: 2px solid #131616; }
+  ul li {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    padding: 0;
+    height: 25px;
+    padding-top: 5px;
+    border-bottom: 2px solid #131616; }
+  ul li:hover {
+    background-color: white; }
+
+.topMovies {
+  position: relative;
+  float: right;
+  width: 950px;
+  height: 150px;
+  top: 300px;
+  border-top: 2px solid #131616;
+  border-bottom: 2px solid #131616; }
+
+/*# sourceMappingURL=main.css.map */
