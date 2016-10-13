@@ -13,22 +13,37 @@
 
     <div class="mainContainer">
         <header>Movie Lens Online</header>
-        <div class="navBar">
+        <nav class="navBar">
           <ul>
-            <li>Home</li>
-            <li>Genres</li>
-            <li>Top Movies</li>
+            <li id="home">Home</li>
+            <li id="genres">Genres</li>
+            <li id="top-rated-movies">Top Movies</li>
           </ul>
-        </div>
-        <input type="text" name="search" class="searchBar" placeholder="Search Movies..."></input>
-        <button name="movieSearch">GO</button>
-        <div class="topMovies"></div>
-    </div>
+        </nav>
+
+        <input type="text" name="search" class="searchField" placeholder="Search Movies..."></input>
+        <button id="movieSearch" name="movieSearch">GO</button>
+        <div class="top-movies"></div>
 
 
+    <section class="content-container">
+      <!-- handlebars templates -->
+    </section>
+</div>
 
-
-
+<!-- Searched Movie Title -->
+<script id="movie-template" type="text/x-handlebars-template">
+  <div class="movie-container">
+    <h2>{{title}}</h2>
+  </div>
+</script>
+<!-- Top Rated Movies -->
+<script id="top-movies-template" type="text/x-handlebars-template">
+  <div class="movie-container">
+    <h2>{{title}}</h2>
+    <p>{{avgRating}}</p>
+  </div>
+</script>
 
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/handlebars-v4.0.5.js"></script>

@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
 }
 
 body {
@@ -8,95 +9,81 @@ body {
 }
 
 button {
-    top: 210px;
-    position: relative;
-    float: left;
-    left: 425px;
     background-color: #4E5859;
     width: 100px;
-    height: 30px;
     border-radius: 20px;
     color: white;
     border: 2px solid #131616;
     font-family: 'Julius Sans One', sans-serif;
+    margin-top: 20px;
 }
 
 header {
-    top: 50px;
-    position: relative;
-    font-size: 60px;
     background-color: white;
-    width: 950px;
-    text-align: center;
-    font-weight: bolder;
     color: #131616;
     font-family: 'Julius Sans One', sans-serif;
-    border-bottom: 2px solid #131616;
+    font-size: 60px;
+    font-weight: bolder;
+    padding: 20px;
+    text-align: center;
+    width: 950px;
 }
 
-.searchBar {
-    position: relative;
-    top: 150px;
-    left: 250px;
+.searchField {
     width: 250px;
     border: 2px solid #4E5859;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-position: 10px 10px;
     padding: 12px 20px;
+    margin-top: 50px;
 }
 
 .mainContainer {
-    width: 950px;
-    height: 600px;
-    border-radius: 20px;
+    align-items: center;
     background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
     margin: 40px auto 0;
-    position: relative;
+    width: 950px;
+  section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    .movie-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
 }
 
 .navBar {
     background-color: #758486;
-    position: relative;
-    float: right;
-    top: 50px;
-    padding: 0;
-    margin: 0;
-    height: 20px;
+    height: 30px;
+    border-top: 2px solid #131616;
+    border-bottom: 2px solid #131616;
 }
 
 ul {
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     width: 950px;
     background-color: #758486;
     padding: 0;
-    margin: 0;
-    height: 25px;
-    border-bottom: 2px solid #131616;
-
+    height: 100%;
     li {
-        display: inline-block;
         width: 33%;
+        height: 100%;
+        padding: 5px;
         text-align: center;
-        padding: 0;
-        height: 25px;
-        padding-top: 5px;
-        border-bottom: 2px solid #131616;
+        font-size: 16px;
     }
-
     li:hover {
         background-color: white;
     }
-}
-
-.topMovies{
-  position: relative;
-  float: right;
-  width:950px;
-  height:150px;
-  top:300px;
-  border-top: 2px solid #131616;
-  border-bottom: 2px solid #131616;
-
 }
