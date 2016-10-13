@@ -1,23 +1,30 @@
 
-(function getMovie() {
+(function () {
+
+function getMovie(movieSelection) {
   $.ajax({
     url: 'http://localhost:9393/api/movies',
+    data: movieSelection,
     dataType: 'json',
-    success: function(data) {
-      console.log('yay');
-      return data;
+    method: 'GET',
+    success: function(rawData) {
+      rawData.forEach(function(dataObj) {
+        var movieTitle = dataObj.title.toLowerCase();
+        if (movieSelection === movieTitle) {
+          console.log("SUCCESS!");
+        }
+      });
     },
     error: function() {
       console.log('no');
     }
   });
+}
 
-
-// $('#movieSearch').on('click', function() {
-//   getMovie();
-  // get input on click
-  // find movie title based on input
-// });
+$('#movieSearch').on('click', function() {
+  var movieSelection = $('.searchField').val();
+  getMovie(movieSelection);
+});
 
   function updateHash(hash) {
     window.location.hash = hash;
@@ -52,6 +59,7 @@
         };
 
         var html = template(context);
+        console.log(data);
 
         $('input').fadeOut();
         $('#movieSearch').fadeOut('fast');
