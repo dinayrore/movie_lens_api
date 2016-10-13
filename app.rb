@@ -41,6 +41,13 @@ delete '/api/movies' do
   movies.destroy
 end
 
+# GET /api/ - return individual/all as JSON
+get '/api/users/:id' do |id|
+  user = User.find_by_id(id)
+  status 200
+  user.to_json
+end
+
 # POST /api/ - create, read request body as JSON
 post '/api/users' do
   user = User.create(

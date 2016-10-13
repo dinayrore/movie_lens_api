@@ -16,8 +16,8 @@
         <nav class="navBar">
           <ul>
             <li id="home">Home</li>
-            <li id="genres">Genres</li>
             <li id="top-rated-movies">Top Movies</li>
+            <li id="user">User</li>
           </ul>
         </nav>
 
@@ -42,6 +42,20 @@
   <div class="movie-container">
     <h2>{{title}}</h2>
     <p>{{avgRating}}</p>
+    <select id="movie-rating" data-id="{{movieId}}">
+      	<option>Rate</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="delete">Delete</option>
+  	</select>
   </div>
 </script>
 

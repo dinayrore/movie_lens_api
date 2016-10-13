@@ -1,5 +1,34 @@
 
 (function () {
+  var user = {
+    id: 17
+  };
+
+  $.ajax({
+    url: 'http://localhost:9393/api/users/' + user.id,
+    dataType: 'json',
+    method: 'GET',
+    success: function() {
+      console.log('we have a user');
+    },
+    error: function() {
+      console.log('did not get a user');
+    }
+  });
+
+  function rateMovie() {
+    $.ajax({
+      url: 'http://localhost:9393/api/ratings',
+      dataType: 'json',
+      method: 'GET',
+      success: function() {
+        console.log('we have a rating');
+      },
+      error: function() {
+        console.log('we dont have a rating');
+      }
+    });
+  }
 
   // Filter through database for searched movie title
   function getMovie(movieSelection) {
