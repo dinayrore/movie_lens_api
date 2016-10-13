@@ -7,11 +7,21 @@ function getMovie(movieSelection) {
     data: movieSelection,
     dataType: 'json',
     method: 'GET',
+
     success: function(rawData) {
       rawData.forEach(function(dataObj) {
         var movieTitle = dataObj.title.toLowerCase();
-        if (movieSelection === movieTitle) {
-          console.log("SUCCESS!");
+
+        if (movieSelection.toLowerCase() === movieTitle) {
+          console.log(dataObj);
+          var source = $('#movie-template').html();
+          var template = Handlebars.compile(source);
+          var context = {
+            title: dataObj.title
+          };
+          var html = template(context);
+          $('.content-container').prepend(html).fadeIn('slow');
+
         }
       });
     },
