@@ -1,6 +1,7 @@
 
 (function () {
 
+  // Filter through database for searched movie title
   function getMovie(movieSelection) {
     $.ajax({
       url: 'http://localhost:9393/api/movies',
@@ -30,16 +31,18 @@
     });
   }
 
-
+  // Search Field - get value and call getMovie function
   $('#movieSearch').on('click', function() {
     var movieSelection = $('.searchField').val();
     getMovie(movieSelection);
   });
 
+  // Window hash update
   function updateHash(hash) {
     window.location.hash = hash;
   }
 
+  // Display Home page
   $('#home').on('click', function() {
     updateHash('home');
     $('.content-container').fadeOut();
