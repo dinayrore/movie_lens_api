@@ -25,7 +25,9 @@
 
   $('#home').on('click', function() {
     updateHash('home');
-
+    $('.content-container').fadeOut();
+    $('input').fadeIn();
+    $('#movieSearch').fadeIn();
   });
 
   $('#genres').on('click', function() {
