@@ -52,6 +52,8 @@ header {
       flex-direction: column;
       align-items: center;
       margin-top: 20px; }
+      .mainContainer section .movie-container p {
+        padding: 10px; }
 
 .navBar {
   background-color: #758486;
@@ -59,7 +61,7 @@ header {
   border-top: 2px solid #131616;
   border-bottom: 2px solid #131616; }
 
-ul {
+nav ul {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -67,13 +69,13 @@ ul {
   background-color: #758486;
   padding: 0;
   height: 100%; }
-  ul li {
+  nav ul li {
     width: 33%;
     height: 100%;
     padding: 5px;
     text-align: center;
     font-size: 16px; }
-  ul li:hover {
+  nav ul li:hover {
     background-color: white; }
 
 /*# sourceMappingURL=main.css.map */
