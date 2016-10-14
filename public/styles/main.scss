@@ -90,3 +90,18 @@ nav ul {
         background-color: white;
     }
 }
+.user {
+  h2 {
+    font-size: 40px;
+    margin: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  li {
+    margin: 10px;
+    font-size: 20px;
+  }
+}

@@ -91,6 +91,7 @@
   $('#home').on('click', function() {
     updateHash('home');
     $('.content-container').fadeOut();
+    $('.content-container').empty();
     $('input').fadeIn();
     $('#movieSearch').fadeIn();
   });
@@ -100,7 +101,7 @@
     updateHash('user');
     $('input').fadeOut();
     $('#movieSearch').fadeOut();
-    $('content-container').fadeOut('slow').empty();
+    $('.content-container').empty().fadeOut();
 
     $.get('/api/users/17', function(data) {
       console.log(data);
