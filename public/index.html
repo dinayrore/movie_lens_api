@@ -37,11 +37,28 @@
     <h2>{{title}}</h2>
   </div>
 </script>
+<!-- User Page -->
+<script id="user-template" type="text/x-handlebars-template">
+  <div class="user">
+    <h2>Welcome User</h2>
+      <ul>
+        <li>Id:{{id}}</li>
+        <li>Age:{{age}}</li>
+        <li>Gender:{{gender}}</li>
+        <li>Occupation:{{occupation}}</li>
+        <li>Zipcode:{{zipcode}}</li>
+      </ul>
+  </div>
+</script>
+
 <!-- Top Rated Movies -->
 <script id="top-movies-template" type="text/x-handlebars-template">
   <div class="movie-container">
     <h2>{{title}}</h2>
-    <p>{{avgRating}}</p>
+    <p>Average Rating: {{avgRating}}</p>
+    {{#if userRating}}
+    <p>User Rating: {{userRating}}</p>
+    {{/if}}
     <select id="movie-rating" data-id="{{movieId}}">
       	<option>Rate</option>
         <option value="1">1</option>

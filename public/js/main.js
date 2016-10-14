@@ -16,19 +16,35 @@
     }
   });
 
-  function rateMovie() {
-    $.ajax({
-      url: 'http://localhost:9393/api/ratings',
-      dataType: 'json',
-      method: 'GET',
-      success: function() {
-        console.log('we have a rating');
+  function rateMovie(movieId, rating) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": 'http://localhost:9393/api/ratings',
+      "data": {
+        "user_id": 17,
+        "movie_id": movieId,
+        "score": rating
       },
-      error: function() {
-        console.log('we dont have a rating');
+      "dataType": 'json',
+      "method": "POST",
+      error: function(reponse) {
+        console.log('Rating Error');
+        console.log(response);
       }
+    };
+    $.ajax(settings).done(function(response) {
+      console.log("Rating sent successfully");
+      console.log(movieId +  " : " + rating);
     });
   }
+
+  $('.content-container').on('change', '#movie-rating', function() {
+    console.log('rating changed');
+    var movieId = $(this).attr('data-id');
+    var rating = this.value;
+    rateMovie(movieId, rating);
+  });
 
   // Filter through database for searched movie title
   function getMovie(movieSelection) {
@@ -43,7 +59,7 @@
         rawData.forEach(function(dataObj) {
           var movieTitle = dataObj.title.toLowerCase();
           if (movieSelection.toLowerCase() === movieTitle) {
-            console.log(dataObj);
+            // console.log(dataObj);
             var source = $('#movie-template').html();
             var template = Handlebars.compile(source);
             var context = {
@@ -79,6 +95,29 @@
     $('#movieSearch').fadeIn();
   });
 
+  // Display User
+  $('nav').on('click', '#user', function() {
+    updateHash('user');
+    $('input').fadeOut();
+    $('#movieSearch').fadeOut();
+    $('content-container').fadeOut('slow').empty();
+
+    $.get('/api/users/17', function(data) {
+      console.log(data);
+      var source= $('#user-template').html();
+      var template= Handlebars.compile(source);
+      var context= {
+        id: data.id,
+        age: data.age,
+        gender: data.gender,
+        occupation: data.occupation,
+        zipcode: data.zip_code
+      };
+      var html = template(context);
+      $('.content-container').prepend(html).fadeIn('slow');
+    });
+  });
+
   // Display Top Rated Movies
   $('nav').on('click', '#top-rated-movies', function() {
     updateHash('top-rated-movies');
@@ -90,9 +129,12 @@
       var source = $('#top-movies-template').html();
       var template = Handlebars.compile(source);
       data.forEach(function(movieWrapper) {
+        console.log(movieWrapper);
         var context = {
           title: movieWrapper.movie.title,
-          avgRating: movieWrapper.average_rating.toFixed(1)
+          avgRating: movieWrapper.average_rating.toFixed(1),
+          movieId: movieWrapper.movie.id
+
         };
       var html = template(context);
       $('.content-container').prepend(html).fadeIn('slow');
