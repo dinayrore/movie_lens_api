@@ -38,6 +38,10 @@
       console.log(movieId +  " : " + rating);
     });
   }
+  // Get rated movie based on user
+  function userRatedMovie() {
+    console.log("user rated movie was got");
+  }
 
   $('.content-container').on('change', '#movie-rating', function() {
     console.log('rating changed');
@@ -104,7 +108,6 @@
     $('.content-container').empty().fadeOut();
 
     $.get('/api/users/17', function(data) {
-      console.log(data);
       var source= $('#user-template').html();
       var template= Handlebars.compile(source);
       var context= {
@@ -126,6 +129,8 @@
     $('#movieSearch').fadeOut('slow');
     $('.content-container').fadeOut('slow').empty();
 
+    userRatedMovie();
+
     $.get('/api/top_rated_movies', function(data) {
       var source = $('#top-movies-template').html();
       var template = Handlebars.compile(source);
@@ -135,7 +140,6 @@
           title: movieWrapper.movie.title,
           avgRating: movieWrapper.average_rating.toFixed(1),
           movieId: movieWrapper.movie.id
-
         };
       var html = template(context);
       $('.content-container').prepend(html).fadeIn('slow');
