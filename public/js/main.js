@@ -33,15 +33,14 @@
         console.log(response);
       }
     };
+
+
     $.ajax(settings).done(function(response) {
       console.log("Rating sent successfully");
       console.log(movieId +  " : " + rating);
     });
   }
-  // Get rated movie based on user
-  function userRatedMovie() {
-    console.log("user rated movie was got");
-  }
+
 
   $('.content-container').on('change', '#movie-rating', function() {
     console.log('rating changed');
@@ -122,6 +121,15 @@
     });
   });
 
+  // window.Handlebars.registerHelper('select', function( value, options ){
+  //     var $el = $('<select />').html( options.fn(this) );
+  //     $el.find('[value="' + value + '"]').attr({'selected':'selected'});
+  //     return $el.html();
+  // });
+
+
+
+
   // Display Top Rated Movies
   $('nav').on('click', '#top-rated-movies', function() {
     updateHash('top-rated-movies');
@@ -129,20 +137,41 @@
     $('#movieSearch').fadeOut('slow');
     $('.content-container').fadeOut('slow').empty();
 
-    userRatedMovie();
+
+    // Get rated movie based on user
+
+
+
+    // displayMovieRating();
+
+    function getRatedMovies(id) {
+      $.get('/api/ratings', function(rawData) {
+        rawData.forEach(function(dataObj) {
+          var movieId = dataObj.movie_id;
+          var userId = dataObj.user_id;
+          var score = dataObj.score;
+          if (movieId === id && userId === 17) {
+            $('#movie-rating').val(score);
+            console.log(score);
+            return score;
+          }
+        });
+      });
+    }
 
     $.get('/api/top_rated_movies', function(data) {
       var source = $('#top-movies-template').html();
       var template = Handlebars.compile(source);
       data.forEach(function(movieWrapper) {
-        console.log(movieWrapper);
+        // console.log(movieWrapper);
         var context = {
           title: movieWrapper.movie.title,
           avgRating: movieWrapper.average_rating.toFixed(1),
           movieId: movieWrapper.movie.id
         };
-      var html = template(context);
-      $('.content-container').prepend(html).fadeIn('slow');
+        var html = template(context);
+        context.score = getRatedMovies(context.movieId);
+        $('.content-container').prepend(html).fadeIn('slow');
       });
     });
   });

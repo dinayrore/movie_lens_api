@@ -55,11 +55,8 @@
   <div class="movie-container">
     <h2>{{title}}</h2>
     <p>Average Rating: {{avgRating}}</p>
-    {{#if userRating}}
-    <p>User Rating: {{userRating}}</p>
-    {{/if}}
-    <select id="movie-rating" data-id="{{movieId}}">
-      	<option>Rate</option>
+    <select id="movie-rating" name="options" data-id="{{movieId}}">
+      	<option>{{score}}</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -75,3 +72,33 @@
 </body>
 
 </html>
+
+
+
+<!-- // function getRatedMovies(template, context) {
+//   $.get('/api/ratings', function(rawData) {
+//     rawData.forEach(function(dataObj) {
+//       var movieId = dataObj.movie_id;
+//       var userId = dataObj.user_id;
+//       var score = dataObj.score;
+//       if (movieId === context.movieId && userId === 17) {
+//         context.score = score;
+//         var html = template(context);
+//         $('.content-container').prepend(html).fadeIn('slow');
+//       }
+//     });
+//   });
+// }
+//
+// $.get('/api/top_rated_movies', function(data) {
+//   var source = $('#top-movies-template').html();
+//   var template = Handlebars.compile(source);
+//   data.forEach(function(movieWrapper) {
+//     var context = {
+//       title: movieWrapper.movie.title,
+//       avgRating: movieWrapper.average_rating.toFixed(1),
+//       movieId: movieWrapper.movie.id
+//     };
+//     getRatedMovies(template, context);
+//   });
+// }); -->
