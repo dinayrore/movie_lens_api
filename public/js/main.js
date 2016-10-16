@@ -11,7 +11,6 @@
     method: 'GET',
     success: function(data) {
       user.ratings = data;
-      console.log(user.ratings);
     },
     error: function() {
       console.log('ERROR = Did not get user\'s ratings');
