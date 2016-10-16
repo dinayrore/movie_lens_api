@@ -8,12 +8,13 @@ body {
 
 button {
   background-color: #4E5859;
-  width: 100px;
   border-radius: 20px;
-  color: white;
   border: 2px solid #131616;
+  cursor: pointer;
+  color: white;
   font-family: 'Julius Sans One', sans-serif;
-  margin-top: 20px; }
+  margin-top: 20px;
+  width: 100px; }
 
 header {
   background-color: white;
@@ -26,13 +27,13 @@ header {
   width: 950px; }
 
 .searchField {
-  width: 250px;
-  border: 2px solid #4E5859;
-  border-radius: 4px;
-  font-size: 16px;
   background-color: white;
+  border-radius: 4px;
+  border: 2px solid #4E5859;
+  font-size: 16px;
+  margin-top: 50px;
   padding: 12px 20px;
-  margin-top: 50px; }
+  width: 250px; }
 
 .mainContainer {
   align-items: center;
@@ -40,41 +41,43 @@ header {
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  min-height: 600px;
   margin: 40px auto 0;
+  min-height: 600px;
   width: 950px; }
   .mainContainer section {
+    align-items: center;
     display: flex;
     flex-direction: column-reverse;
-    align-items: center; }
+    margin-bottom: 20px; }
     .mainContainer section .movie-container {
+      align-items: center;
       display: flex;
       flex-direction: column;
-      align-items: center;
       margin-top: 20px; }
       .mainContainer section .movie-container p {
         padding: 10px; }
 
 .navBar {
   background-color: #758486;
-  height: 30px;
+  border-bottom: 2px solid #131616;
   border-top: 2px solid #131616;
-  border-bottom: 2px solid #131616; }
+  height: 30px; }
 
 nav ul {
+  background-color: #758486;
   display: flex;
+  height: 100%;
   justify-content: space-between;
   list-style: none;
-  width: 950px;
-  background-color: #758486;
   padding: 0;
-  height: 100%; }
+  width: 950px; }
   nav ul li {
-    width: 33%;
+    cursor: pointer;
+    font-size: 16px;
     height: 100%;
     padding: 5px;
     text-align: center;
-    font-size: 16px; }
+    width: 33%; }
   nav ul li:hover {
     background-color: white; }
 
@@ -90,6 +93,7 @@ nav ul {
   font-size: 20px; }
 
 #movie-rating {
+  cursor: pointer;
   width: 60px; }
 
 /*# sourceMappingURL=main.css.map */

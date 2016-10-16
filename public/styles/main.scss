@@ -12,6 +12,7 @@ button {
     background-color: #4E5859;
     border-radius: 20px;
     border: 2px solid #131616;
+    cursor: pointer;
     color: white;
     font-family: 'Julius Sans One', sans-serif;
     margin-top: 20px;
@@ -81,6 +82,7 @@ nav ul {
     padding: 0;
     width: 950px;
     li {
+        cursor: pointer;
         font-size: 16px;
         height: 100%;
         padding: 5px;
@@ -107,5 +109,6 @@ nav ul {
   }
 }
 #movie-rating {
+  cursor: pointer;
   width: 60px;
 }

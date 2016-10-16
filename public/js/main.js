@@ -1,5 +1,6 @@
 
 (function () {
+  // Auto user
   var user = {
     id: 17,
     ratings: []
@@ -89,7 +90,6 @@
   function updateHash(hash) {
     window.location.hash = hash;
   }
-
   // Display Home page
   $('#home').on('click', function() {
     updateHash('home');
