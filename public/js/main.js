@@ -1,36 +1,40 @@
 
 (function () {
   var user = {
-    id: 17
+    id: 17,
+    ratings: []
   };
-
+  // On page load, get user's ratings
   $.ajax({
-    url: 'http://localhost:9393/api/users/' + user.id,
+    url: '/api/ratings?user_id=' + user.id,
     dataType: 'json',
     method: 'GET',
-    success: function() {
-      console.log('we have a user');
+    success: function(data) {
+      user.ratings = data;
+      console.log(user.ratings);
     },
     error: function() {
-      console.log('did not get a user');
+      console.log('ERROR = Did not get user\'s ratings');
     }
   });
 
   function rateMovie(movieId, rating) {
+    var possibleRating = user.ratings.find(function(userRating) {
+      return userRating.movie_id === Number(movieId);
+    });
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": 'http://localhost:9393/api/ratings',
+      "url": '/api/ratings' + (possibleRating ? ("/"+possibleRating.id) : ""),
       "data": {
         "user_id": 17,
         "movie_id": movieId,
         "score": rating
       },
       "dataType": 'json',
-      "method": "POST",
-      error: function(reponse) {
+      "method": (possibleRating ? "PUT" : "POST"),
+      error: function() {
         console.log('Rating Error');
-        console.log(response);
       }
     };
     $.ajax(settings).done(function(response) {
@@ -91,6 +95,7 @@
   $('#home').on('click', function() {
     updateHash('home');
     $('.content-container').fadeOut();
+    $('.content-container').empty();
     $('input').fadeIn();
     $('#movieSearch').fadeIn();
   });
@@ -100,10 +105,9 @@
     updateHash('user');
     $('input').fadeOut();
     $('#movieSearch').fadeOut();
-    $('content-container').fadeOut('slow').empty();
+    $('.content-container').empty().fadeOut();
 
     $.get('/api/users/17', function(data) {
-      console.log(data);
       var source= $('#user-template').html();
       var template= Handlebars.compile(source);
       var context= {
@@ -125,19 +129,22 @@
     $('#movieSearch').fadeOut('slow');
     $('.content-container').fadeOut('slow').empty();
 
+    // Get top rated movies
     $.get('/api/top_rated_movies', function(data) {
       var source = $('#top-movies-template').html();
       var template = Handlebars.compile(source);
       data.forEach(function(movieWrapper) {
-        console.log(movieWrapper);
+        var possibleRating = user.ratings.find(function(userRating) {
+          return userRating.movie_id === Number(movieWrapper.movie.id);
+        });
         var context = {
           title: movieWrapper.movie.title,
           avgRating: movieWrapper.average_rating.toFixed(1),
-          movieId: movieWrapper.movie.id
-
+          movieId: movieWrapper.movie.id,
+          score: possibleRating ? possibleRating.score : 'Rate'
         };
-      var html = template(context);
-      $('.content-container').prepend(html).fadeIn('slow');
+        var html = template(context);
+        $('.content-container').prepend(html).fadeIn('slow');
       });
     });
   });

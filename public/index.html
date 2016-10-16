@@ -42,36 +42,26 @@
   <div class="user">
     <h2>Welcome User</h2>
       <ul>
-        <li>Id:{{id}}</li>
-        <li>Age:{{age}}</li>
-        <li>Gender:{{gender}}</li>
-        <li>Occupation:{{occupation}}</li>
-        <li>Zipcode:{{zipcode}}</li>
+        <li>Id: {{id}}</li>
+        <li>Age: {{age}}</li>
+        <li>Gender: {{gender}}</li>
+        <li>Occupation: {{occupation}}</li>
+        <li>Zipcode: {{zipcode}}</li>
       </ul>
   </div>
 </script>
-
 <!-- Top Rated Movies -->
 <script id="top-movies-template" type="text/x-handlebars-template">
   <div class="movie-container">
     <h2>{{title}}</h2>
     <p>Average Rating: {{avgRating}}</p>
-    {{#if userRating}}
-    <p>User Rating: {{userRating}}</p>
-    {{/if}}
-    <select id="movie-rating" data-id="{{movieId}}">
-      	<option>Rate</option>
+    <select id="movie-rating" name="options" data-id="{{movieId}}">
+      	<option>{{score}}</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="delete">Delete</option>
   	</select>
   </div>
 </script>
