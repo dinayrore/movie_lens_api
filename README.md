@@ -1,6 +1,6 @@
 # MovieLens
 
-A remake of 'what_to_watch.rb' (Movie Advisor). Still utilizing data from the 90s, which seeds this database.
+A remake of 'what_to_watch.rb' / Movie Advisor better known as MovieLens. Still utilizing data from the 90s, which seeds the data for this database.
 
 ## Getting Started
 
