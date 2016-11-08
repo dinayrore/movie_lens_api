@@ -56,7 +56,7 @@ Once you have completed the above installation processes your system is ready to
 Please complete the following procedure to run the program on a live system:
   1. Open Terminal.
   2. Change your directory to the one that which you would like to save this project. `$ cd folder_name`
-  3. Then run the command `$ git clone https://github.com/kteich88/movie_lens_api.git` and `$ cd movie_lens_api`
+  3. Then run the commands `$ git clone https://github.com/kteich88/movie_lens_api.git` and `$ cd movie_lens_api`
   4. Run `gem install bundler` and then run `bundle` or `bundle install` to run the Gemfile on your machine.
   5. Open postgresql and create your database using the following code: `CREATE DATABASE dbname;` or run `rake db:create`
   6.  Back in Terminal input `export DATABASE_URL=postgres://YOURUSER@localhost:5432/SQLDATABASENAME` (replace YOURUSER with your username and SQLDATABASENAME with the database you created).
@@ -65,7 +65,7 @@ Please complete the following procedure to run the program on a live system:
 
 ### Running Web app
 
-  1. Still in Terminal, run `bundle exec shotgun app.rb` to run the app utilizing sinatra, while allowing changes to be made to the code for testing purposes.
+  1. In Terminal, run `bundle exec shotgun app.rb` to run the app utilizing sinatra, while allowing changes to be made to the code for testing purposes.
   2. Go to your web browser, enter the localhost:9393/index.html
   3. READ all instructions BEFORE adding input.
 
